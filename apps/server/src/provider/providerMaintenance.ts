@@ -171,10 +171,6 @@ function makePnpmGlobalProviderMaintenanceCapabilities(
     provider: definition.provider,
     packageName: definition.npmPackageName,
     updateExecutable: "pnpm",
-    // pnpm 10+ blocks install scripts by default, so a package whose
-    // postinstall finishes the install (fetching or unpacking its platform
-    // binary) is left broken while the update reports success. Allow this one
-    // package's scripts; the flag needs pnpm 10.4+.
     updateArgs: [
       "add",
       "-g",
